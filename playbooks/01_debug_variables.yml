@@ -1,6 +1,8 @@
 --- # Debug YAML variables
 
 - hosts: local
+  become: ansible
+  become_method: ssh
   tasks:
   - name: Debugging variable
     debug:
