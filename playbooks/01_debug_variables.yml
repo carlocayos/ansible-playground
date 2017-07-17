@@ -1,0 +1,14 @@
+--- # Debug YAML variables
+
+- hosts: local
+  tasks:
+  - name: Debugging variable
+    debug:
+      msg: "Hi {{ your_name }}. The value of sample_var is {{ sample_var }} - from {{ robot_name }}"
+  vars:
+    sample_var: 55
+  vars_files:
+    - ../conf/random_name.yml
+  vars_prompt:
+    - name: your_name
+      prompt: What is your name?
